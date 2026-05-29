@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Product Details</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div id="productDetails"></div>
+
+<script src="products.js"></script>
+
+<script>
+
+const id = localStorage.getItem("productId");
+
+const product = products.find(p => p.id == id);
+
+document.getElementById("productDetails").innerHTML = `
+
+<img src="${product.image}" width="300">
+
+<h1>${product.name}</h1>
+
+<h2>${product.price}</h2>
+
+<p>${product.description}</p>
+
+<p>${product.reviews}</p>
+
+<p>Delivery: ${product.delivery}</p>
+
+<button>Add To Cart</button>
+
+`;
+
+</script>
+
+</body>
+
+</html>
